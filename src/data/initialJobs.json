@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "puesto": "React Developer",
+        "empresa": "Facebook",
+        "ciudad": "San Francisco",
+        "pais": "USA"
+    },
+    {
+        "id": 1,
+        "puesto": "Team Leader",
+        "empresa": "Google",
+        "ciudad": "New Delhi",
+        "pais": "India"
+    },
+    {
+        "id": 2,
+        "puesto": "Development Test Engineer",
+        "empresa": "Space X",
+        "ciudad": "California",
+        "pais": "USA"
+    }
+]
