@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 class Jobs extends Component {
     render(){
         return this.props.jobs.map(job => (
-            <Job
+
+                <Job
                 job={job}
                 key={job.id}
                 deleteJob={this.props.deleteJob}
-            />
+                />
+            
         ));
     }
 }

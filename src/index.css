@@ -1,16 +1,7 @@
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 2px solid rgb(26, 139, 45);
-  padding: 30px;
-  border-radius: 5px;
-}
-
 .header {
   display: flex;
   margin-bottom: 5px;
+  text-align: center
 }
 
 body {
