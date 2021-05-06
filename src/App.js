@@ -1,46 +1,26 @@
-import React from 'react';
-//Import Components
-import Header from './components/Header';
-import Jobs from './components/Jobs';
-import JobForm from './components/JobForm'
+import { Component ,Fragment} from 'react';
+import {Switch, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Home from "./screens/Home"
+import Cities from "./screens/CitiesScreen"
+import Countries from "./screens/CountriesScreen"
+import Companies from "./screens/CompaniesScreen"
+import Jobs from "./screens/JobsScreen"
 
-//Import initial data
-import initialJobs from './data/initialJobs';
+export class App extends Component {
 
-//Import utils
-import newId from './utils/newId';
-
-class App extends React.Component{
-  state = {
-    jobs : initialJobs
-  }
-
-  deleteJob = id => {
-    const newJobs = this.state.jobs.filter(job => job.id !== id);
-    this.setState({ jobs: newJobs })
-  }
-
-  addJob = (puesto, empresa, ciudad, pais) => {
-    const newJob = {
-      id: newId(),
-      puesto,
-      empresa,
-      ciudad,
-      pais
-    }
-    this.setState({ jobs: [...this.state.jobs, newJob]});
-  }
-
-  render(){
-    return(
-      <div className = "container">
-      <Header/>
-      <JobForm addJob={this.addJob} />
-      <Jobs
-        jobs={this.state.jobs}
-        deleteJob={this.deleteJob}
-      />
-      </div>
+  render() {
+    return (
+      <Fragment>
+        <NavBar/>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/cities" component={Cities}/>
+          <Route path="/countries" component={Countries}/>
+          <Route path="/companies" component={Companies}/>
+          <Route path="/jobs" component={Jobs}/>
+        </Switch>
+      </Fragment>
     );
   }
 }
